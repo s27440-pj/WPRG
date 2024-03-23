@@ -14,8 +14,13 @@
 			return True;
 		}
 	}
-
-	echo (is_prime(2) . "\n");
-	echo (is_prime(5) . "\n");
-
+	
+	$start = 1;
+	$end = 23;
+	
+	for ($i = $start; $i <= $end; $i++)
+	{
+		if (is_prime($i))
+			echo ($i . "\n");
+	}
 ?>
