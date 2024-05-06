@@ -1,0 +1,2 @@
+https://facebook.com;Facebook
+http://forum.php.pl/index.php?showtopic=9;Forum PHP
