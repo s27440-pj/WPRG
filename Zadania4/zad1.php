@@ -1,29 +1,34 @@
 <?php
+$file = './plik.txt';
 
-if (!$file = fopen('./plik.txt', 'r')){
-    echo "Cannot open plik.txt";
+$fileContent = fopen($file, 'r+');
+if ($fileContent === false) {
+    echo "Nie można otworzyć pliku.";
 } else {
     $lines = [];
-    while(!feof($file)){
-        $line = fgets($file);
+    while(!feof($fileContent)){
+        $line = fgets($fileContent);
         if ($line !== false) {
             $lines[] = $line;
         }
     }
-    fclose($file);
 
     $last_line = end($lines);
-    if (strlen($last_line) > 0) {
-        // Jeśli ostatnia linijka jest nie pusta, dodaj nową linię
-        $last_line = $last_line . "\n";
+    $last_char = substr($last_line, -1);
+    if ($last_char !== "\n") {
         array_pop($lines);
+        $last_line .= "\n";
         $lines[] = $last_line;
     }
 
     $reversed_lines = array_reverse($lines);
-    foreach ($reversed_lines as $line) {
-        $line = nl2br($line);
-        echo($line);
+
+    // Zapisz odwróconą zawartość do pliku
+    if (file_put_contents($file, implode("", $reversed_lines)) !== false) {
+        echo "Plik został przetworzony pomyślnie.";
+    } else {
+        echo "Wystąpił błąd podczas zapisu do pliku.";
     }
+    fclose($fileContent);
 }
 ?>
