@@ -1,0 +1,47 @@
+body {
+    font-family: Century Gothic;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:#8e94e7;
+    padding: 1vh;
+    text-align: center;
+    width: 70vw;
+    margin: 0 auto;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    background-color: #514d4d;
+    color: #fff;
+    padding: 1vh;
+    text-align: center;
+    width: 70vw;
+    margin: 0 auto;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color:#8e94e7;
+}
+
+.content {
+    font-family: Century Gothic;
+    width: 70vw;
+    margin: 0 auto; /* Wyśrodkuj zawartość */
+    padding: 20px;
+}
